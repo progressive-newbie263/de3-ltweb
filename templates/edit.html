@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Supplier</title>
+    </head>
+<body>
+    <h1>Edit Supplier</h1> 
+
+    <form method="POST">
+        <input type="hidden" name="SupplierID" value="{{ supplier['SupplierID'] }}">
+        <div>
+            <label for="SupplierName">Supplier Name:</label>
+            <input type="text" id="SupplierName" name="SupplierName" value="{{ supplier['SupplierName'] }}" required>
+        </div>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>

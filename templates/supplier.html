@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Supplier Info Lists:</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Supplier ID:</th>
+                <th>Supplier Name:</th>
+                <th>Email Address:</th>
+                <th>Telephone:</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for supplier in suppliers %}
+            <tr>
+                <td>{{ supplier[0] }}</td> <!--supplier id-->
+                <td>{{ supplier[1] }}</td> <!--supplier name-->
+                <td>{{ supplier[2] }}</td> <!--supplier email-->
+                <td>{{ supplier[4] }}</td> <!--supplier phone-->
+                <td>
+                    <button class="delete-button" data-supplier-id="{{ supplier[0] }}">Delete</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
